@@ -7,5 +7,5 @@ public class Percolation
 	public boolean isOpen(int i, int j)
 	
 	public boolean percolates()
-
-	
+	{}
+}	
