@@ -55,22 +55,9 @@ public class UF
 		StdOut.println();
 	}
 
-
-
 	public static void main(String[] args)
-	{
-		UF uf = new UF(10);
-		uf.union(1,0);
-		uf.union(9,6);
-		uf.union(7,2);
-		uf.union(4,6);
-		uf.union(5,4);
-		uf.union(1,2);
-		uf.union(6,8);
-		uf.union(9,2);
-		uf.union(4,3);
-								
-		uf.display();
-	}		 
+	{}
+
+	 
 }
 		
