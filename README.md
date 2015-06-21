@@ -12,4 +12,6 @@ if sites are independently set to be open with probability p (and therefore bloc
 The programme trys to infer the probability that the system percolates.
 
 
- ![image](https://github.com/TengHu/Coursera_algorithm/percolates.png)
+ ![image](https://github.com/TengHu/Coursera_algorithm/blob/master/percolates.png)
+ 
+ 
