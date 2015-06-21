@@ -6,3 +6,5 @@ if sites are independently set to be open with probability p (and therefore bloc
 
 
 The programme trys to infer the probability that the system percolates.
+
+
