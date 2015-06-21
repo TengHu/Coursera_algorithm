@@ -55,6 +55,16 @@ public class UF
 		StdOut.println();
 	}
 
+	public boolean connected(int i,int j)
+	{
+		i = find(i);
+		j = find(j);
+		
+		if( i == j) return true;
+		else return false;
+	}	
+
+
 	public static void main(String[] args)
 	{	
 		
