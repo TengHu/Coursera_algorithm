@@ -1,9 +1,16 @@
+
+
 public class PercolationsStats
 {
 	private Percolation pc;
 	private double[] count;
 	private static int T;
 	private static int N;
+	private double mean;
+	private double stddev;
+	private double confidenceLo;
+	private double confidenceHi;
+
 	
 		
 
@@ -38,6 +45,10 @@ public class PercolationsStats
 				count[i] = MC_times/(N*N);
 			}
 		}
+
+		
+
+
 	}
 
 	public double mean()
@@ -47,27 +58,47 @@ public class PercolationsStats
 		{
 			sum += count[i];
 		}
-		return sum/T;
+		this.mean = sum/T;
+		return mean;
 	}
 
+	
 
-
-	//public double stddev();
-	//public double confidenceLo();
-	//public double confidenceHi();
+	public double stddev()
+	{
+		double sum = 0;	
+		for(int i = T-1; i>=0 ; i--)
+		{
+			sum = sum + (count[i] - mean) * (count[i] - mean);
+		}
+		this.stddev = Math.sqrt(sum/(T-1));
+		return stddev;
+	}	
+	
+	public double confidenceLo()
+	{
+		this.confidenceLo = mean - (1.96 * stddev)/Math.sqrt(T);
+		return confidenceLo;
+	}
+		
+	public double confidenceHi()
+	{
+		this.confidenceHi = mean + (1.96 * stddev)/Math.sqrt(T);
+		return confidenceHi;
+	}
 		
 	public static void main(String[] args)
 	{
-		//int N = StdIn.readInt();
-		//int T = StdIn.readInt();
-				
-		PercolationsStats pc = new PercolationsStats(200,100);	
+		int n = Integer.parseInt(args[0]);
+		int t = Integer.parseInt(args[1]);
 		
-						
+		PercolationsStats pc = new PercolationsStats(n,t);	
 		
-			StdOut.print(pc.mean() + " ");
-				
-		
-		
+		StdOut.print(" mean = " + pc.mean());
+		StdOut.println();
+		StdOut.print(" stddev = " + pc.stddev());
+		StdOut.println();
+		StdOut.print(" 95% confidence interval = " + pc.confidenceLo() + " " + pc.confidenceHi());
+		StdOut.println();
 	} 
 }
