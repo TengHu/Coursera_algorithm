@@ -5,18 +5,18 @@ public class UF
 
 	public UF(int N)
 	{
-		id =  new int[N];
-		sz = new int [N];
+		this.id =  new int[N];
+		this.sz = new int [N];
 	
 		for(int i = 0; i<N; i++)
 		{
-			id[i] = i;
+			this.id[i] = i;
 		}
 
 		
 		for(int i = 0; i<N; i++)
 		{
-			sz[i] = 1;
+			this.sz[i] = 1;
 		}
 
 		
@@ -56,8 +56,12 @@ public class UF
 	}
 
 	public static void main(String[] args)
-	{}
+	{	
+		
+	}
+}	
+						
+				
 
-	 
-}
+	
 		
